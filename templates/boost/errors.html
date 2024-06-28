@@ -1,0 +1,17 @@
+{% extends 'boost/base.html' %}
+{% load static %}
+
+{% block title %} Error {% endblock %}
+
+{% block body_block %}
+
+<div class="container">
+    <div class="d-flex flex-column justify-content-end align-items-center">
+        <h1>Error: {{error}}</h1>
+    <a href="{% url 'boost:homepage' %}" class="btn btn-primary">Go home</a>
+    </div>
+</div>
+
+
+
+{% endblock %}

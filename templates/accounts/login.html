@@ -1,0 +1,79 @@
+{% extends 'boost/base.html' %}
+{% load static %}
+{% block title %} Login {% endblock %}
+
+{% block body_block %}
+
+<div class="container d-flex justify-content-center align-items-center m-5">
+    
+    <div class="jumbotron">
+        
+        <div class="row">
+
+            <div class="col">
+                <img src="{% static "images/studentlogin.jpg"%}" alt="Login image" class="img-fluid">
+            </div>
+
+            <div class="col">
+                <form action=""  method="POST" class="form-control">
+                    {% csrf_token %}
+        
+                    
+        
+                    <div class="m-3 d-flex justify-content-center">
+                        <p>Login</p>
+                    </div>
+                    <div class="m-3">
+                        <label for="username" class="form-label ">Username</label>
+                        <input type="text" name="username"  class="form-control  rounded " placeholder="Enter username" id="username">
+                    </div>
+        
+                    <div class="m-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" name="password"  class="form-control  rounded " placeholder="Enter Password" id="password">
+                    </div>
+                    <div class="m-3 d-flex justify-content-center">
+                        <p class="text-danger">{{error}}</p>
+                            
+                    </div>
+                    <div class="m-3 d-flex justify-content-center">
+                        <a href="{% url 'accounts:forgetpassword'%}">Forgot Password?</a>
+                    </div>
+                    
+                   <!-- {% comment %} <input type="Submit" value=" forget password">
+                    </form> {% endcomment %} -->
+                    <div class="mb-3 d-flex justify-content-center">
+                        <input type="submit" class="btn btn-primary btn-sm w-75">
+                    </div>
+                    
+                    <div class="mb-3 d-flex justify-content-center">
+                        <small class="">Not on Gateboost? <a href="{% url 'accounts:register'%}">Register</a></small>
+                    </div>
+                </form>
+<!--                 
+                    <div class="alert alert-{{ messages.level_tag }}">
+                        {{ messages }}
+                    </div> -->
+                
+
+            </div>
+            
+        </div>
+
+
+            
+    
+    
+    
+    
+        
+    </div>
+    
+</div>
+
+
+
+
+
+
+{% endblock %}

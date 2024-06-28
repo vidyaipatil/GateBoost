@@ -1,0 +1,140 @@
+{% extends 'boost/base.html' %}
+
+{% block title %} Select test {% endblock %}
+
+{% block body_block %}
+
+
+
+<!-- <div>
+    <h2>Give a full GATE mock</h2>
+    <a href="" class="btn btn-primary">Click here</a>
+</div> -->
+
+<div class="container d-flex flex-column">
+
+    <div class="align-self-center">
+        <h1>Select subject</h1>
+    </div>
+    
+
+    {% for subject in Subjects %}
+    <div class="row">
+        <div class="col  d-flex flex-column">
+
+            <div class="container align-self-center p-3 d-flex flex-column m-4 border border-2 border-primary w-50 ">
+                <div class="align-self-center">
+                    <h3>{{subject.subject_name}}</h3><br>
+                </div>
+            
+                <button type="button" class="btn btn-primary w-15 align-self-center" data-toggle="modal"
+                    data-target="#myModal_{{subject.subject_id}}">
+                    Click here
+                </button>
+            </div>
+
+            
+
+            <div class="modal fade" id="myModal_{{subject.subject_id}}" tabindex="-1" role="dialog">
+                _{{subject.subject_id}}
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Select Filters</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{% url 'tests:test' %}" method="POST">
+
+                                {% csrf_token %}
+
+
+                                <div>
+                                    <label for="subject_{{subject.subject_id}}">Subject</label>
+                                    <input type="text" readonly id="subject_{{subject.subject_id}}" name="subject_name"
+                                        value="{{subject.subject_name}}">
+                                </div>
+
+                                <div class="question-difficulty">
+                                    <p>Choose difficulty (single/multiple)</p>
+
+                                    <input type="checkbox" id="easy_{{subject.subject_id}}" value="easy"
+                                        name="difficulty">
+                                    <label for="easy_{{subject.subject_id}}">Easy</label>
+
+                                    <input type="checkbox" id="medium_{{subject.subject_id}}" value="medium"
+                                        name="difficulty">
+                                    <label for="medium_{{subject.subject_id}}">medium</label>
+
+                                    <input type="checkbox" id="hard_{{subject.subject_id}}" value="hard"
+                                        name="difficulty">
+                                    <label for="hard_{{subject.subject_id}}">Hard</label>
+                                </div>
+
+                                <div class="question-type">
+                                    <p>Choose type of questions</p>
+
+                                    <input type="checkbox" id="MCQ_{{subject.subject_id}}" value="mcq"
+                                        name="question_type">
+                                    <label for="MCQ_{{subject.subject_id}}">MCQ</label>
+
+                                    <input type="checkbox" id="MSQ_{{subject.subject_id}}" value="msq"
+                                        name="question_type">
+                                    <label for="MSQ_{{subject.subject_id}}">MSQ</label>
+
+                                    <input type="checkbox" id="NAT_{{subject.subject_id}}" value="nat"
+                                        name="question_type">
+                                    <label for="NAT_{{subject.subject_id}}">NAT</label>
+                                </div>
+
+                                <div class="prev-include">
+                                    <p>Also include previously incorrect questions?</p>
+
+                                    <input type="checkbox" id="prev_{{subject.subject_id}}" value="include"
+                                        name="prev_include">
+                                    <label for="prev_{{subject.subject_id}}">Include</label>
+
+                                </div>
+
+                                <div class="test-type">
+                                    <p>Choose type of test</p>
+
+                                    <input type="radio" id="smalltest_{{subject.subject_id}}" value="small"
+                                        name="test_type">
+                                    <label for="smalltest_{{subject.subject_id}}">Small (15 questions 30
+                                        minutes)</label>
+
+                                    <input type="radio" id="mediumtest_{{subject.subject_id}}" value="medium"
+                                        name="test_type">
+                                    <label for="mediumtest_{{subject.subject_id}}">Medium (30 question 60
+                                        minutes)</label>
+
+                                    <input type="radio" id="largetest_{{subject.subject_id}}" value="large"
+                                        name="test_type">
+                                    <label for="largetest_{{subject.subject_id}}">Large (65 questions 180
+                                        minutes)</label>
+                                </div>
+
+                                <input type="submit" value="Apply" class="btn btn-primary">
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+
+{% endblock %}

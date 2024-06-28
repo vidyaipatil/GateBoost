@@ -1,0 +1,115 @@
+{% extends 'boost/base.html' %}
+<!-- {% load static %} -->
+{% block title %} Register {% endblock %}
+
+
+{% block body_block %}
+
+
+    <div class="container">
+        <div class="jumbotron">
+            <form action="" method="POST">
+                <div class="container" >
+                    <div class="row" style="height: 600px;">
+
+                        <div class="col  align-content-center ">
+                            <div class="col justify-content-center"><img src="{% static "images/studentlogin.jpg"%}" class="img-fluid" alt=""></div>
+                        </div>
+                        
+                        <div class=" col-7 align-content-center">
+                            <div class=" h-50 d-flex flex-column justify-content-center align-items-center ">
+                                <p class="h3">Create Account</p>
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    <div class=" w-75 m-3 ">
+                                        <label for="email" class="">Email</label>
+                                        <input type="email" class="form-control  rounded " id="email" placeholder="Enter Email" name="email" required>
+                                    </div>
+
+                                    <div class=" w-75 mb-3 ">
+                                        {% if exists_text %}
+                                        <p class="text-danger">{{exists_text}}</p>
+                                        {% endif %}
+                                        <label for="username" class="">Username</label>
+                                        <input type="text" class="form-control  rounded " id="username" placeholder="Enter Username" name="username" required>
+                                    </div>
+                                    
+                                    <div class="d-flex align-content-around  w-75  ">
+                                        <div class="col  align-self-start ">
+                                            <label for="fname" class="">First name</label>
+                                            <input type="text" class="form-control rounded " id="fname" placeholder="Enter First name" name="fname" required>
+                                        </div>
+                                        <div class="col ">
+                                            <label for="lname" class="">Last name</label>
+                                            <input type="text" class="form-control  rounded " id="lname" placeholder="Enter Last name"  name="lname">
+                                        </div>
+                                    </div>
+                                    <div class=" w-75 m-3 ">
+                                        <label for="password" class="">Password</label>
+                                        <input type="password" class="form-control  rounded " id="password" placeholder="Create a password" name="password" required>
+                                    </div>
+
+                                    <div class=" w-75 mb-3 ">
+                                        
+                                        <select class="form-control  rounded " name="year" placeholder="Year" required>
+                                            <option value="" disabled selected>Select year</option>
+                                            <option value="fy">First Year</option>
+                                            <option value="sy">Second Year</option>
+                                            <option value="ty">Third Year</option>
+                                            <option value="ly">Fourth Year</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <!-- <label for="password" class="">Password</label> -->
+                                    </div>
+                                    <div class=" w-75 mb-3 ">
+                                        <select class="form-control  rounded " name="branch" required>
+                                            <option value="" disabled selected>Select branch</option>
+                                            <option value="CS">Computer Science and Information Technology</option>
+                                            <option value="EC">Electronics and Communication Engineering</option>
+                                            <option value="EE">Electrical Engineering</option>
+                                            <option value="ME">Mechanical Engineering</option>
+                                            <option value="CE">Civil Engineering</option>
+                                            <option value="DA">Data Science and Artificial Intelligence</option>
+                                            <option value="XE">General Sciences</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <!-- <label for="password" class="">Password</label> -->
+                                    </div>
+                                    <div class=" w-75 mb-3 ">
+                                        <input type="submit" class="btn btn-primary w-100">
+                                    </div>
+                                    
+                                    <small>Already on Gateboost?    <a href="{% url 'accounts:login'%}">   Login</a></small>
+
+                                    {% for message in messages %}
+                                        <div class="alert alert-{{ message.level_tag }}">
+                                        {{ message }}
+                                        </div>
+                                    {% endfor %}
+
+                                    
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- <form action="" method="POST">
+        d
+    </form> -->
+
+
+
+
+
+{% endblock %}

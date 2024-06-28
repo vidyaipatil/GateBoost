@@ -1,0 +1,127 @@
+{% extends 'boost/base.html' %}
+{% load static %}
+{% block title %} About {% endblock %}
+
+
+{% block body_block %}
+
+<div class="container m-5">
+    <div class="d-flex justify-content-center">
+        <h1>This is GateBoost</h1>
+    </div>
+    <div class="block">
+        <div class="ele">
+            <div class="ele2">
+                <img src="{% static "images/img1.svg"%}">
+    
+            </div>
+            <div class="ele2">
+                <h2>Real Time Exam Simulation</h2>
+            </div>
+            <div class="ele2">
+                Mimics the actual exam environment.Creates a timer that counts down during the test, replicating real
+                exam pressure.
+                May include features like question navigation (flagging, skipping, reviewing), similar to an actual
+                computer-based test.
+                Might offer limited breaks during the test, mirroring some real exams.
+            </div>
+    
+    
+        </div>
+        <div class="ele">
+            <div class="ele2">
+    
+                <img src="{% static "images/img2.svg"%}">
+            </div>
+            <div class="ele2">
+                <h2>Practice and revise until You Get Excellance</h2>
+            </div>
+            <div class="ele2">
+                Learning isn't just limited to classes with our practice section, mock tests and lecture notes shared as
+                PDFs for your revision
+                Through consistent practice, you develop muscle memory, improve your technique, and solidify your
+                understanding. </div>
+        </div>
+        <div class="ele">
+            <div class="ele2">
+                <img src="{% static "images/img3.svg"%}">
+    
+            </div>
+            <div class="ele2">
+                <h2>Detailed performance Report</h2>
+            </div>
+            <div class="ele2">
+                Provides a comprehensive analysis of the user's performance after the mock test.Explanation for each
+                answer, including why the chosen answer is correct and why others are incorrect.Identification of missed
+                questions and areas for improvement.May offer suggestions for further study materials or targeted
+                practice questions.
+    
+    
+            </div>
+        </div>
+    
+    
+    </div>
+    
+    
+    
+    
+    <h1 style="text-align:center; color:rgb(0, 119, 255);margin:100px;margin-top:200px;">Solution provided by The
+        Excellent Mentor</h1>
+    <div class="block block2">
+        <div class="ele e2">
+            <div class="ele2">
+                <img src="{% static "images/img4.png"%}">
+    
+            </div>
+            <div class="ele2">
+                <h2>Bhagyashri Patil</h2>
+            </div>
+            <div class="ele2 ele22">
+                10+ years of teching experience <br>
+                AIR 10 in GATE 2025
+            </div>
+    
+    
+        </div>
+        <div class="ele e2">
+            <div class="ele2">
+    
+                <img src="{% static "images/img4.png"%}">
+            </div>
+            <div class="ele2">
+                <h2>Vidya Patil</h2>
+            </div>
+            <div class="ele2 ele22">
+                5+ years of teching experience <br>
+                AIR 100 in GATE 2025
+            </div>
+        </div>
+        <div class="ele e2">
+            <div class="ele2">
+                <img src="{% static "images/img4.png"%}">
+    
+            </div>
+            <div class="ele2">
+                <h2>Rudra chaudhari</h2>
+            </div>
+            <div class="ele2 ele22">
+                15+ years of teching experience <br>
+                AIR 15 in GATE 2025
+            </div>
+        </div>
+    
+    
+    </div>
+    </div>
+    <div class="m-5 d-flex justify-content-center">
+        <a href="{% url 'boost:homepage' %}" class="btn btn-primary">Go to Home</a>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

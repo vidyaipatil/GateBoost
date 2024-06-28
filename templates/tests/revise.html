@@ -1,0 +1,62 @@
+{% extends 'boost/base.html' %}
+
+{% block title %} Revise {% endblock %}
+
+{% block body_block %}
+<div class="container">
+
+    {% if noquest %}
+    <div class="m-5">
+        <p class="fs-4 fw-bold">Great work, {{user.first_name}}! You have covered all the questions!</p>
+    </div>
+    {% else %}
+
+
+
+    <div class="m-5">
+        <p class="h4 fw-bold">{{user.first_name}}, retry the questions!</p>
+    </div>
+    <div class="d-flex justify-content-center">
+        <form action="{% url 'tests:result'%}" method="POST">
+            {% csrf_token %}
+            <div>
+                {% for question in question_list %}
+                    <div>
+                        <div class="question mb-3">
+                            <p class="fs-5 fw-bold mt-3 ">{{question.question_id.question_text}}</p>
+                            <div class="mx-2">
+                                {% for answer in answer_list %}
+                                    {% if answer.question_id_id == question.question_id.question_id %}
+                                    <input type="radio" id="a_{{ answer.answer_id}}" name="q_{{ question.question_id }}"
+                                        value="{{answer.answer_id}}">
+                                    <label for="a_{{ answer.answer_id }}">{{answer.answer_text}}</label> <br>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                    
+                            
+
+
+                        </div>
+                    
+                    </div>
+
+
+                {% endfor %}
+                <div class="d-flex justify-content-center m-5">
+                    <!-- <input type="submit" > -->
+                    <input type="Submit" value="Submit" class="btn btn-primary w-50">
+                </div>
+            </div>
+
+
+    </div>
+    </form>
+</div>
+
+
+
+
+</div>
+{% endif %}
+{% endblock %}

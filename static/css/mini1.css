@@ -1,0 +1,135 @@
+
+
+
+  #outer {
+   
+    /* width: 97vw;
+    height: 70vh; */
+   margin-top: 2vh;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 2px black; */
+    align-items: center;
+  }
+  #logo {
+    height: 170px;
+    width: 200px;
+    animation: anlogo 3s linear 1;
+  }
+  
+  @keyframes anlogo {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  #text {
+    height: 200px;
+    display: flex;
+    align-items: last baseline;
+    justify-content: center;
+  
+  }
+  #gatemaster,#slogan {
+    font-size: 50px;
+    word-spacing: 15px;
+    font-weight: 900;
+    background: linear-gradient(
+      135deg,
+      #5335cf 0%,
+      #de005e 25%,
+      #f66e48 50%,
+      #de005e 75%,
+      #5335cf 100%
+    );
+    background-size: 400%;
+    background-clip: text;
+  
+    -webkit-text-fill-color: transparent;
+    animation: xyz 3s linear infinite;
+    animation: abcd 2s linear 1 forwards;
+   
+    border: none;
+  }
+  @keyframes abcd {
+    100%{
+      transform: translateY(-160%);
+    }
+  }
+  @keyframes xyz {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 400%;
+    }
+  }
+  #slogan {
+    color: black;
+    margin-bottom: 50px;
+    font-size: 30px;
+    font-weight: 600;
+    word-spacing: 15px;
+    color: white;
+    animation: abcde 3s linear 1 forwards;
+  }
+  @keyframes abcde {
+      100%{
+        transform: translateY(-200%);
+        
+      }
+    }
+    .swap{
+      font-size: 50px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 50px;
+      color: rgb(0, 119, 255);
+      /* animation: xyz 3s linear 1 forwards repeat; */
+    
+    }
+    /* @keyframes xyz {
+      0%{
+        transform: scaleX(0);
+      }
+      100%{
+        transform: scaleX(1);
+        
+      }
+    } */
+    .swap{
+      width: 0;
+      overflow: hidden; /* Keeps the content hidden till typed */
+      border-right: 0.15em solid rgb(0, 119, 255); /* Simulates the cursor */
+      white-space: nowrap; /* Keeps the content on one line */
+      animation: typing 4s steps(38, end) infinite, blink-caret .75s step-end infinite ;
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      font-family: monospace;
+      /* font-size: 20px; */
+      margin: 20px;
+      margin-bottom: 50px;
+      background-color:rgb(255, 251, 251) ;
+      
+    }
+    
+    @keyframes typing {
+      from { width: 0 }
+      50% { width: 100% }
+      100% { width: 100% }
+    }
+    
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: rgb(0, 119, 255) }
+    }
+    
+    .swap::after {
+      content: ",Enjoy your gate journey";
+      white-space: nowrap;
+      /* color: azure; */
+    }

@@ -1,0 +1,225 @@
+{% extends 'boost/base.html'%}
+{% load static %}
+
+{% block title %} Homepage {% endblock %}
+
+{% block body_block %}
+{% if not user.is_authenticated %}
+<div>
+    {% comment %} <img src="{% static "images/bag.png"%}" class="c6" height="500" width="1500"> {% endcomment %}
+    <div id="outer" class="c13">
+        <div>
+            <img id="logo" src="{% static "images/logo.jpg"%}" alt="">
+        </div>
+        <div id="text">
+            <div id="gatemaster">GateBoost</div>
+        </div>
+        <div id="slogan">UNLOCK YOUR POTENTIAL</div>
+    </div>
+
+</div>
+{% endif %}
+<div class="container">
+
+    <div class="row">
+        <div class="col d-flex flex-wrap align-items-stretch">
+
+
+            {% if user.is_authenticated %}
+            <h1 class="align-self-end fw-bold">Hello {{user.first_name}}, start your GATE journey today!</h1>
+            <p class="align-self-start">Practice on Gateboost to boost your gate preparation and excell in the Gate 2025
+                <br><br><a href="{% url 'tests:testhome'%}" class="btn btn-primary m-auto mt-0 rounded-pill">Practice
+                    ></a>
+            </p>
+            {% else %}
+            <h1 class="align-self-end fw-bold">Start your GATE journey today!</h1>
+            <p class="align-self-start">Practice on Gateboost to boost your gate preparation and excell in the Gate 2025
+                <br><br><a href="{% url 'accounts:register'%}" class="btn btn-primary m-auto mt-0 rounded-pill">Create
+                    account ></a>
+            </p>
+            {% endif %}
+
+
+        </div>
+
+        <div class="col justify-content-center"><img src="{% static "images/girlstudy.png"%}" class="img-fluid" alt="">
+        </div>
+    </div>
+
+    {% if not user.is_authenticated %}
+    <div class="swap">GATE BOOST</div>
+
+    <div class="block">
+        <div class="ele">
+            <div class="ele2">
+                <img src="{% static "images/img1.svg"%}">
+
+            </div>
+            <div class="ele2">
+                <h2>Real Time Exam Simulation</h2>
+            </div>
+            <div class="ele2">
+                Mimics the actual exam environment.Creates a timer that counts down during the test, replicating real
+                exam pressure.
+                May include features like question navigation (flagging, skipping, reviewing), similar to an actual
+                computer-based test.
+                Might offer limited breaks during the test, mirroring some real exams.
+            </div>
+
+
+        </div>
+        <div class="ele">
+            <div class="ele2">
+
+                <img src="{% static "images/img2.svg"%}">
+            </div>
+            <div class="ele2">
+                <h2>Practice and revise until You Get Excellance</h2>
+            </div>
+            <div class="ele2">
+                Learning isn't just limited to classes with our practice section, mock tests and lecture notes shared as
+                PDFs for your revision
+                Through consistent practice, you develop muscle memory, improve your technique, and solidify your
+                understanding. </div>
+        </div>
+        <div class="ele">
+            <div class="ele2">
+                <img src="{% static "images/img3.svg"%}">
+
+            </div>
+            <div class="ele2">
+                <h2>Detailed performance Report</h2>
+            </div>
+            <div class="ele2">
+                Provides a comprehensive analysis of the user's performance after the mock test.Explanation for each
+                answer, including why the chosen answer is correct and why others are incorrect.Identification of missed
+                questions and areas for improvement.May offer suggestions for further study materials or targeted
+                practice questions.
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <h1 style="text-align:center; color:rgb(0, 119, 255);margin:100px;margin-top:25vh;">Solution provided by The
+        Excellent Mentor</h1>
+    <div class="block block2">
+        <div class="ele e2">
+            <div class="ele2">
+                <img src="{% static "images/img4.png"%}">
+
+            </div>
+            <div class="ele2">
+                <h2>Bhagyashri Patil</h2>
+            </div>
+            <div class="ele2 ele22">
+                10+ years of teching experience <br>
+                AIR 10 in GATE 2025
+            </div>
+
+
+        </div>
+        <div class="ele e2">
+            <div class="ele2">
+
+                <img src="{% static "images/img4.png"%}">
+            </div>
+            <div class="ele2">
+                <h2>Vidya Patil</h2>
+            </div>
+            <div class="ele2 ele22">
+                5+ years of teching experience <br>
+                AIR 100 in GATE 2025
+            </div>
+        </div>
+        <div class="ele e2">
+            <div class="ele2">
+                <img src="{% static "images/img4.png"%}">
+
+            </div>
+            <div class="ele2">
+                <h2>Rudra chaudhari</h2>
+            </div>
+            <div class="ele2 ele22">
+                15+ years of teching experience <br>
+                AIR 15 in GATE 2025
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="foot">
+    <div class="foot1">
+        <div class="foot2">
+            <div>
+                <img src="{% static "images/logo.jpg"%}" height="60">
+            </div>
+            <div class="c2">
+                GateBoost
+            </div>
+        </div>
+        <br>
+        {% endif %}
+
+
+        <hr>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="grey">
+                        Gateboost provide the Boost to your GATE score. Our comprehensive mock tests and insightful
+                        reports pinpoint
+                        your weaknesses, allowing you to focus on improvement and achieve excellence.
+                    </div>
+                    <br>
+                    <h5>
+                        Reach out to us
+                    </h5>
+                    <div class="grey">Get the Solution of the questions after practicing on the GateBoost. for any query
+                        regarding
+                        the Solution </div>
+                    <br>
+                    <div class="foot5">
+                        <div>
+                            <img src="{% static "images/call.png"%}" height="20">
+                        </div>
+                        <div>
+                            Call 91+8668729668
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="{% static "images/logo2.avif"%}" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    
+
+</div>
+
+
+
+
+
+
+<div class="last">
+    ©2024 GateBoost. All Rights Reserved.
+</div>
+{% endblock %}

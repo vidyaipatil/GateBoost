@@ -1,0 +1,46 @@
+{% extends 'boost/base.html'%}
+{% load static %}
+{% block title %} Help {% endblock %}
+
+
+
+{% block body_block %}
+<div class="container m-5">
+    <div class="d-flex justify-content-center">
+        <h1>This is GateBoost</h1>
+    </div>
+    <div class="row m-3">
+        <div class="col">
+            <div class="grey">
+                Gateboost provide the Boost to your GATE score. Our comprehensive mock tests and insightful
+                reports pinpoint
+                your weaknesses, allowing you to focus on improvement and achieve excellence.
+            </div>
+            <br>
+            <h5>
+                Reach out to us
+            </h5>
+            <div class="grey">Get the Solution of the questions after practicing on the GateBoost. for any query
+                regarding
+                the Solution </div>
+            <br>
+            <div class="foot5">
+                <div>
+                    <img src="{% static "images/call.png"%}" height="20">
+                </div>
+                <div>
+                    Call 91+8668729668
+                </div>
+                
+            </div>
+            <div class="mt-4 d-flex justify-content-center">
+                <a href="{% url 'boost:homepage' %}" class="btn btn-primary">Go to Home</a>
+            </div>
+        </div>
+        <div class="col">
+            <img src="{% static "images/logo2.avif"%}" class="img-fluid">
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

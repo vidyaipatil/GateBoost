@@ -1,0 +1,29 @@
+{% extends 'boost/base.html' %}
+
+{% block body_block %}
+
+
+<div class="container d-flex flex-column">
+    <div class="align-self-center">
+        <h1>Hello {{user.first_name}} , check your analytics</h1>
+
+        <br><br>
+
+        <div class="d-flex flex-column">
+            <div class="align-self-center">
+                <p class="h5">Total questions attempted: {{question_figures.0}}</p>
+                <p class="h5"> Easy questions : {{question_figures.1}}</p>
+                <p class="h5">Medium questions : {{question_figures.2}}</p>
+                <p class="h5">Hard questions : {{question_figures.3}}</p>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
