@@ -5,19 +5,24 @@
 
 {% block body_block %}
 {% if not user.is_authenticated %}
-<div>
-    {% comment %} <img src="{% static "images/bag.png"%}" class="c6" height="500" width="1500"> {% endcomment %}
-    <div id="outer" class="c13">
-        <div>
-            <img id="logo" src="{% static "images/logo.jpg"%}" alt="">
+<div id="outer" class="container-fluid c13">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 text-center">
+            <img id="logo" src="{% static "images/logo.jpg" %}" alt="">
         </div>
-        <div id="text">
+    </div>
+    <div id="text" class="row justify-content-center">
+        <div class="col-12 text-center">
             <div id="gatemaster">GateBoost</div>
         </div>
-        <div id="slogan">UNLOCK YOUR POTENTIAL</div>
     </div>
-
+    <div id="slogan" class="row justify-content-center">
+        <div class="col-12 text-center">
+            UNLOCK YOUR POTENTIAL
+        </div>
+    </div>
 </div>
+
 {% endif %}
 <div class="container">
 
@@ -48,8 +53,53 @@
 
     {% if not user.is_authenticated %}
     <div class="swap">GATE BOOST</div>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-evenly">
+            <div class="col-md-4">
+                <div class="card mt-3">
+                    <img src="{% static "images/img1.svg"%}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h2 class="card-title">Real Time Exam Simulation</h2>
+                      <p class="card-text">Mimics the actual exam environment.Creates a timer that counts down during the test, replicating real
+                        exam pressure.
+                        May include features like question navigation (flagging, skipping, reviewing), similar to an actual
+                        computer-based test.
+                        Might offer limited breaks during the test, mirroring some real exams.</p>
+                      {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-3">
+                    <img src="{% static "images/img2.svg"%}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h2 class="card-title">Practice and revise until You Get Excellance</h2>
+                      <p class="card-text"> Learning isn't just limited to classes with our practice section, mock tests and lecture notes shared as
+                        PDFs for your revision
+                        Through consistent practice, you develop muscle memory, improve your technique, and solidify your
+                        understanding.</p>
+                      {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-3" >
+                    <img src="{% static "images/img3.svg"%}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h2 class="card-title">Detailed performance Report</h2>
+                      <p class="card-text">Provides a comprehensive analysis of the user's performance after the mock test.Explanation for each
+                        answer, including why the chosen answer is correct and why others are incorrect.Identification of missed
+                        questions and areas for improvement..</p>
+                
+                      {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+                    </div>
+                  </div>
+            </div>
+    
+        </div>
+    </div>
 
-    <div class="block">
+    {% comment %} <div class="block">
         <div class="ele">
             <div class="ele2">
                 <img src="{% static "images/img1.svg"%}">
@@ -101,14 +151,14 @@
         </div>
 
 
-    </div>
+    </div> {% endcomment %}
 
 
 
 
     <h1 style="text-align:center; color:rgb(0, 119, 255);margin:100px;margin-top:25vh;">Solution provided by The
         Excellent Mentor</h1>
-    <div class="block block2">
+    {% comment %} <div class="block block2">
         <div class="ele e2">
             <div class="ele2">
                 <img src="{% static "images/img4.png"%}">
@@ -153,6 +203,44 @@
 
 
     </div>
+</div> {% endcomment %}
+<div class="container-fluid">
+    <div class="row d-flex justify-content-evenly">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static "images/img4.png"%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h2 class="card-title">Bhagyashri Patil</h2>
+                  <p class="card-text">10+ years of teching experience <br>
+                    AIR 10 in GATE 2025</p>
+                  {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+                </div>
+              </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static "images/img4.png"%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h2 class="card-title">Vidya Patil</h2>
+                  <p class="card-text">5+ years of teching experience <br>
+                    AIR 100 in GATE 2025</p>
+                  {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+                </div>
+              </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static "images/img4.png"%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h2 class="card-title">Rudra chaudhari</h2>
+                  <p class="card-text">15+ years of teching experience <br>
+                    AIR 15 in GATE 2025</p>
+                  {% comment %} <a href="#" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+                </div>
+              </div>
+        </div>
+
+    </div>
 </div>
 <div class="foot">
     <div class="foot1">
@@ -169,8 +257,9 @@
 
 
         <hr>
+    {% comment %} </div> {% endcomment %}
 
-        <div class="container">
+        <footer class="container-fluid">
             <div class="row">
                 <div class="col">
                     <div class="grey">
@@ -201,25 +290,16 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-    
-
+</footer>
 </div>
-
-
-
-
-
-
-<div class="last">
+{% comment %} <div class="row last">
+    <div class="col-12 ">
     ©2024 GateBoost. All Rights Reserved.
+    </div>
+</div> {% endcomment %}
+<div class="row last" style="margin: 0; padding: 0; width: 100%; max-width: 100%;">
+    <div class="col-12 last" style="padding: 0; margin: 0; text-align: center;">
+    ©2024 GateBoost. All Rights Reserved.
+    </div>
 </div>
 {% endblock %}
